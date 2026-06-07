@@ -1,0 +1,36 @@
+{
+  "id": 2,
+  "title": "LQSA",
+  "questions": [
+    {
+      "questionText": "¿Como se llama la comunidad donde viven los personajes?",
+      "answers": ["Atalaya del Arciprestre", "Mirador de MontePinar", "Granada", "No se sabe"],
+      "correctIndex": 1,
+      "imageName": "edificio_lqsa"
+    },
+    {
+      "questionText": "¿Como se llama este personaje?",
+      "answers": ["Amador Rivas", "Enrique Pastor", "Antonio Lobato", "No tiene nombre, es secundario"],
+      "correctIndex": 0,
+      "imageName": "amador_lqsa"
+    },
+    {
+      "questionText": "¿Como se llama la novio de Maxi?",
+      "answers": ["Ana María", "Maite", "Ana Rosa", "No tiene novia"],
+      "correctIndex": 2,
+      "imageName": "anarosa_lqsa"
+    },
+    {
+      "questionText": "¿Cual es el eslógan de Mariscos Recio?",
+      "answers": ["El mar al mejor precio", "Más barato y me quedo calvo", "Compra y gasta que te sobra la pasta", "El pescado más fresco que la Pedroche"],
+      "correctIndex": 0,
+      "imageName": "mariscos_lqsa"
+    },
+    {
+      "questionText": "¿Cual es el apodo de este personaje?",
+      "answers": ["Picha Suelta", "Hombre Cojín", "Espetero", "Pelocho"],
+      "correctIndex": 3,
+      "imageName": "javi_lqsa"
+    }
+  ]
+}

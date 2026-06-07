@@ -1,0 +1,36 @@
+{
+  "id": 3,
+  "title": "Persona 5",
+  "questions": [
+    {
+      "questionText": "¿Cual es el nombre en clave de este personaje?",
+      "answers": ["Fox", "Skull", "Crow", "Joker"],
+      "correctIndex": 3,
+      "imageName": "joker_p5"
+    },
+    {
+        "questionText": "¿Como se llama esta persona?",
+        "answers": [ "Arséne", "Megami-Ten", "Yoshitsune", "Thor" ],
+        "correctIndex": 2,
+        "imageName": "yoshitsune_p5"
+    },
+    {
+      "questionText": "¿Que es realmente la saga Persona?",
+      "answers": ["Un spin-off", "Una IP original", "Un proyecto de game-jam", "No sé"],
+      "correctIndex": 0,
+      "imageName": "persona5"
+    },
+    {
+      "questionText": "¿Como se llama el juego del que la saga Persona derivó?",
+      "answers": ["Total War", "Shin Megami Tensei", "Dinasty Warrior", "Pokémon"],
+      "correctIndex": 1,
+      "imageName": "megami_p5"
+    },
+    {
+      "questionText": "¿Cual es el nombre en clave de este personaje?",
+      "answers": ["Panther", "Queen", "Navi/Oracle", "Noir"],
+      "correctIndex": 1,
+      "imageName": "queen_p5"
+    }
+  ]
+}
