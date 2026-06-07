@@ -43,7 +43,8 @@ public class LeaderboardManager : MonoBehaviour
             GameObject btn = Instantiate(kahootButtonPrefab, kahootListContainer);
             btn.GetComponentInChildren<TMP_Text>().text = kahootName;
 
-            btn.GetComponent<Button>().onClick.AddListener(() => {
+            btn.GetComponent<Button>().onClick.AddListener(() =>
+            {
                 selectedKahootText.text = kahootName;
                 ShowRanking(file);
             });
@@ -55,7 +56,8 @@ public class LeaderboardManager : MonoBehaviour
         ResultList resultList = LoadResults(filePath);
         var ordered = resultList.entries.OrderByDescending(e => e.Score).ToList();
 
-        foreach (Transform child in rankingContainer) Destroy(child.gameObject);
+        foreach (Transform child in rankingContainer)
+            Destroy(child.gameObject);
 
         if (ordered.Count == 0) return;
 
@@ -71,7 +73,7 @@ public class LeaderboardManager : MonoBehaviour
     {
         if (!File.Exists(path))
         {
-            ErrorReporter.Report("Archivo de resultados no encontrado: " + path);
+            Debug.LogError("Archivo de resultados no encontrado: " + path);
             return new ResultList();
         }
 
@@ -85,7 +87,7 @@ public class LeaderboardManager : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            ErrorReporter.Report("Error al leer resultados desde " + path + ": " + e.Message);
+            Debug.LogError("Error al leer resultados desde " + path + ": " + e.Message);
             return new ResultList();
         }
     }

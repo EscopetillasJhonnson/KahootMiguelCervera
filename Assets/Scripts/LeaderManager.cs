@@ -61,8 +61,8 @@ public class LeaderManager : MonoBehaviour
         {
             GameObject row = Instantiate(rankingEntryPrefab, rankingContainer);
             TMP_Text[] texts = row.GetComponentsInChildren<TMP_Text>();
-            texts[0].text = entry.Score.ToString();      // ScoreText
-            texts[1].text = entry.Username;              // UsernameText
+            texts[0].text = entry.Score.ToString();      
+            texts[1].text = entry.Username;              
         }
     }
 

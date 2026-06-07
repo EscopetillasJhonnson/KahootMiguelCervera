@@ -12,8 +12,8 @@ using Directory = System.IO.Directory;
 
 public class ResultsManager : MonoBehaviour
 {
-    public TMP_Text scoreText;          // Texto dinámico de la puntuación
-    public TMP_Text labelText;          // Texto fijo "Has obtenido la siguiente puntuación:"
+    public TMP_Text scoreText;          
+    public TMP_Text labelText;          
     public Button leaderboardButton;
     public Button menuButton;
     public Button selectorButton;

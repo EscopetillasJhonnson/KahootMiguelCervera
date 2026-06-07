@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,7 +21,7 @@ public class GameManager : MonoBehaviour
     private int currentScore = 0;
     private float questionStartTime;
 
-    public TMP_Text scoreText;  
+    public TMP_Text scoreText;
 
     void Start()
     {
@@ -66,10 +64,12 @@ public class GameManager : MonoBehaviour
         if (!string.IsNullOrEmpty(q.imageName))
         {
             Sprite img = Resources.Load<Sprite>("QuestionImages/" + q.imageName);
+
             if (img == null)
             {
-                ErrorReporter.Report("No se encontró la imagen: " + q.imageName + " en la pregunta " + currentQuestionIndex);
+                Debug.LogError("No se encontró la imagen: " + q.imageName + " en la pregunta " + currentQuestionIndex);
             }
+
             questionImage.sprite = img;
             questionImage.gameObject.SetActive(img != null);
         }
@@ -104,29 +104,29 @@ public class GameManager : MonoBehaviour
             float elapsed = Time.time - questionStartTime;
             if (elapsed >= 10f)
             {
-                currentScore += 50; 
+                currentScore += 50;
             }
             else
             {
-                currentScore += 100; 
+                currentScore += 100;
             }
             scoreText.text = "Puntuación: " + currentScore;
         }
 
         if (selectedIndex >= q.answers.Count)
         {
-            ErrorReporter.Report("Índice de respuesta fuera de rango en la pregunta " + currentQuestionIndex);
+            Debug.LogError("Índice de respuesta fuera de rango en la pregunta " + currentQuestionIndex);
             return;
         }
 
         ShowCorrectAnswer();
-
         StartCoroutine(NextQuestionDelay());
     }
 
     private void ShowCorrectAnswer()
     {
         Question q = kahoot.questions[currentQuestionIndex];
+
         for (int i = 0; i < answerButtons.Count; i++)
         {
             Color c = (i == q.correctIndex) ? Color.green : Color.red;
@@ -158,6 +158,4 @@ public class GameManager : MonoBehaviour
             btn.GetComponent<Image>().color = Color.white;
         }
     }
-
-    
 }

@@ -1,0 +1,36 @@
+{
+  "id": 4,
+  "title": "SMT 5",
+  "questions": [
+    {
+      "questionText": "¿Cómo se llama el protoscuro que acompaña al protagonista?",
+      "answers": ["Aogami", "Ichiro", "Yuta", "Desconocido"],
+      "correctIndex": 0,
+      "imageName": "aogami_smt"
+    },
+    {
+      "questionText": "¿Cuál es el nombre de la fusión del protoscuro y el protagonista?",
+      "answers": ["Semi-Dios", "Nahobino", "Dios Original", "Oscuro"],
+      "correctIndex": 1,
+      "imageName": "nahobino_smt"
+    },
+    {
+      "questionText": "¿Quien es el super-jefe secreto?",
+      "answers": ["El protagonista de un juego anterior", "Un demonio sellado por su propio poder", "Una leyenda dada por muerta", "Tu mejor amigo corrupto por el poder"],
+      "correctIndex": 0,
+      "imageName": "demifiend_smt"
+    },
+    {
+      "questionText": "¿Cuantos canones/historias tienes en SMT5 Vengeance?",
+      "answers": ["1", "2", "3", "4"],
+      "correctIndex": 1,
+      "imageName": "smt5"
+    },
+    {
+      "questionText": "¿Cómo se llaman los canones/historias?",
+        "answers": [ "Canon de creación/destrucción", "Canon de ley/caos", "Canon de creación/venganza", "Canon de ley/venganza" ],
+      "correctIndex": 3,
+      "imageName": "foto_smt"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": 1,
+  "title": "FNAF",
+  "questions": [
+    {
+      "questionText": "¿Quién es este personaje?",
+      "answers": ["Freddy", "Bonnie", "Chica", "Foxy"],
+      "correctIndex": 0,
+      "imageName": "freddy_fnaf"
+    },
+    {
+      "questionText": "¿Cúal es el nombre de el restaurante del primer juego?",
+      "answers": ["Freddy Fazbear's Pizza'", "Freddy Pizza", "Telepizza", "No se dice"],
+      "correctIndex": 0,
+      "imageName": "pizzeria_fnaf"
+    },
+    {
+      "questionText": "¿Cual es nuestra principal defensa en la oficina?",
+      "answers": ["La luz", "El ventilador", "Las puertas", "Nuestros músculos"],
+      "correctIndex": 2,
+      "imageName": "oficina_fnaf"
+    },
+    {
+      "questionText": "¿Quien es el villano principal?",
+      "answers": ["Puppet", "El hombre de morado", "El capitalismo", "Los niños"],
+      "correctIndex": 1,
+      "imageName": "foto_villano_fnaf"
+    },
+    {
+      "questionText": "¿Que puesto de trabajo tenemos en la pizzeria?",
+      "answers": ["Cocinero", "Cantante", "Mecánico", "Guardia Nocturno"],
+      "correctIndex": 3,
+      "imageName": "fnaf"
+    }
+  ]
+}

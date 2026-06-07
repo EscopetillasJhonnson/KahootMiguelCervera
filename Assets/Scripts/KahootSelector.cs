@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class KahootSelector : MonoBehaviour
@@ -17,8 +16,8 @@ public class KahootSelector : MonoBehaviour
 
     public void RefreshKahootList()
     {
-        // Limpia botones anteriores
-        foreach (Transform child in buttonContainer) Destroy(child.gameObject);
+        foreach (Transform child in buttonContainer)
+            Destroy(child.gameObject);
 
         LoadKahootsFromResources();
         LoadKahootsFromPersistentData();
@@ -43,25 +42,26 @@ public class KahootSelector : MonoBehaviour
             try
             {
                 string json = File.ReadAllText(file);
+
                 if (string.IsNullOrEmpty(json))
                 {
-                    ErrorReporter.Report("Archivo JSON vacío: " + file);
+                    Debug.LogError("Archivo JSON vacío: " + file);
                     continue;
                 }
 
                 KahootData kahoot = JsonUtility.FromJson<KahootData>(json);
+
                 if (kahoot == null || string.IsNullOrEmpty(kahoot.title))
                 {
-                    ErrorReporter.Report("JSON inválido o sin título: " + file);
+                    Debug.LogError("JSON inválido o sin título: " + file);
                     continue;
                 }
 
                 CreateButton(kahoot.title, json);
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
-                ErrorReporter.Report("JSON corrupto ignorado: " + file + " - " + e.Message);
-                continue;
+                Debug.LogError("JSON corrupto ignorado: " + file + " - " + e.Message);
             }
         }
     }
@@ -79,16 +79,15 @@ public class KahootSelector : MonoBehaviour
 
                 if (kahoot == null || string.IsNullOrEmpty(kahoot.title))
                 {
-                    ErrorReporter.Report("Kahoot por defecto inválido: " + jsonFile.name);
+                    Debug.LogError("Kahoot por defecto inválido: " + jsonFile.name);
                     continue;
                 }
 
                 CreateButton(kahoot.title, json);
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
-                ErrorReporter.Report("Error al cargar Kahoot por defecto: " + jsonFile.name + " - " + e.Message);
-                continue;
+                Debug.LogError("Error al cargar Kahoot por defecto: " + jsonFile.name + " - " + e.Message);
             }
         }
     }
@@ -103,15 +102,15 @@ public class KahootSelector : MonoBehaviour
     void OnKahootSelected(string jsonContent)
     {
         string username = usernameInput.text;
+
         if (string.IsNullOrEmpty(username))
         {
-            ErrorReporter.Report("Usuario no introdujo nombre en el selector de Kahoot");
+            Debug.LogError("Usuario no introdujo nombre en el selector de Kahoot");
             username = "#####";
         }
+
         PlayerPrefs.SetString("Username", username);
         PlayerPrefs.SetString("SelectedKahoot", jsonContent);
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
     }
-
-
 }

@@ -24,7 +24,7 @@ public class JSONImporter : MonoBehaviour
         // Ocultar panel al inicio
         notificationPanel.SetActive(false);
 
-        // Revisar cada 2 segundos si hay cambios
+        // Revisa cada 2 segundos si hay cambios
         InvokeRepeating(nameof(CheckForNewFiles), 2f, 2f);
     }
 
@@ -35,7 +35,7 @@ public class JSONImporter : MonoBehaviour
         // Detectar si hay más archivos que antes
         if (currentFiles.Length > lastFiles.Length)
         {
-            // Buscar cuál es nuevo
+           
             foreach (string file in currentFiles)
             {
                 if (System.Array.IndexOf(lastFiles, file) == -1)
@@ -51,7 +51,6 @@ public class JSONImporter : MonoBehaviour
             }
         }
 
-        // Actualizar referencia
         lastFiles = currentFiles;
     }
 
